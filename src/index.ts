@@ -40,4 +40,22 @@ export class Leap {
         }
     }
 
+    //print content of the div
+    static printDiv(divId: string): void {
+        const printContent = document.getElementById(divId)?.innerHTML;
+        if (!printContent) {
+            console.error(`Div with ID '${divId}' not found.`);
+            return;
+        }
+
+        const originalContent = document.body.innerHTML;
+        document.body.innerHTML = printContent;
+        window.print();
+        document.body.innerHTML = originalContent;
+    }
+
 }
+
+
+
+
