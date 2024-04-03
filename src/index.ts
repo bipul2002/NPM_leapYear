@@ -12,10 +12,12 @@ export class Leap {
         if (isLeap) {
             const msg:string = 'It is a leap year'
             console.log(`%c ${msg}: ${year}`, 'color:green');
+            alert(`${msg}: ${year}`);
             
         } else {
             const msg:string = 'It is not a leap year'
             console.log(`%c ${msg}: ${year}`, 'color:red');
+            alert(`${msg}: ${year}`);
         }
     }
     //diaplay all leap year in range
@@ -24,15 +26,16 @@ export class Leap {
         for (let year = startYear; year <= endYear; year++) {
             if (Leap.isLeapYear(year)) {
                 console.log(`Leap year: ${year}`);
+                alert(`${year}`);
             }
         }
     }
 
     //next leap year
-    static nextLeapYear(year: number): number | undefined {
+    static nextLeapYear(year: number): void{
         for (let i = year + 1; ; i++) {
             if (Leap.isLeapYear(i)) {
-                return i;
+                alert(i);
             }
         }
     }
